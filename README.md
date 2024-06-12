@@ -1,4 +1,4 @@
-№ Book Store CRUD project
+# Book Store CRUD project
 
 BookStore Project
 
