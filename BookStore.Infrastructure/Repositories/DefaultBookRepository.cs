@@ -1,4 +1,5 @@
 ﻿using BookStore.Core.Models;
+using BookStore.Infrastructure.DataGenerators;
 using BookStore.Infrastructure.Interfaces;
 using Microsoft.Extensions.Logging;
 using System.Net;
@@ -10,11 +11,12 @@ namespace BookStore.Infrastructure.Repositories
         private readonly ILogger<DefaultBookRepository> _logger;
 
         private readonly List<Book> _books;
+        private int countOfGeneratingBooks = 10;
 
         public DefaultBookRepository(ILogger<DefaultBookRepository> logger)
         {
             _logger = logger;
-            _books = new List<Book>();
+            _books = BooksGenerator.GenerateBooks(countOfGeneratingBooks);
         }
 
         public Task<Book> AddBookAsync(Book book, CancellationToken cancellationToken)

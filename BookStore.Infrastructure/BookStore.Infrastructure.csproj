@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Concrete\" />
-    <Folder Include="DataGenerators\" />
   </ItemGroup>
 
   <ItemGroup>
